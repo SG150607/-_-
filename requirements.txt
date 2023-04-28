@@ -1,0 +1,9 @@
+Flask
+Flask-Login
+Flask-WTF
+html5
+python-dotenv
+requests
+SQLAlchemy
+WTForms
+Werkzeug==2.0.0

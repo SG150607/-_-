@@ -1,0 +1,323 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <p align="center">
+        {% if not type and not day %}
+<!--        ЗЗ-->
+        <h6 class="display-6">ГОРОСКОП</h6>
+<!--        <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/cat">ЗНАК ЗОДИАКА</a>-->
+        <div class="btn-group shadow mb-3 rounded" role="group" aria-label="Basic checkbox toggle button group">
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/aries/today">ОВЕН</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/taurus/today">ТЕЛЕЦ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/twins/today">БЛИЗНЕЦЫ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/cancer/today">РАК</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/lion/today">ЛЕВ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/virgin/today">ДЕВА</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/scales/today">ВЕСЫ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/scorpio/today">СКОРПИОН</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/sagittarius/today">СТРЕЛЕЦ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/capricorn/today">КОЗЕРОГ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/aquarius/today">ВОДОЛЕЙ</a>
+            <a role="button" class="btn btn-outline-success btn-sm" href="/horoscope/fish/today">РЫБЫ</a>
+        </div>
+        <br><span style="font-family: Times New Roman, serif; font-size: 150%;">Ежедневный гороскоп подобранный индивидуально для каждого знака зодиака поможет в принятии важных решений.</span>
+        <img src="{{url_for('static', filename='img/zodiacs/horoscope.jpg')}}" alt="Здесь должна была быть картинка">
+        <h6> &nbsp; </h6>
+        <br><h3>Календаные периоды знаков:</h3>
+        <li>Овен - с 21 марта по 20 апреля</li>
+        <li>Телец - с 21 апреля по 21 мая</li>
+        <li>Близнецы - с 22 мая по 21 июня</li>
+        <li>Рак - с 22 июня по 22 июля</li>
+        <li>Лев - с 23 июля по 23 августа</li>
+        <li>Дева - с 24 августа по 22 сентября</li>
+        <li>Весы - с 23 сентября по 22 октября</li>
+        <li>Скорпион - с 23 октября по 21 ноября</li>
+        <li>Стрелец - с 22 ноября по 21 декабря</li>
+        <li>Козерог - с 22 декабря по 20 января</li>
+        <li>Водолей - с 21 января по 19 февраля</li>
+        <li>Рыбы - с 20 февраля по 20 марта</li>
+        {% elif type == "aries"%}
+<!--        Овен-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ ОВНОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/aries/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/aries/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Овен.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Овен.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "taurus" %}
+<!--        Телец-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ ТЕЛЬЦОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/taurus/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/taurus/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Телец.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Телец.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "twins" %}
+<!--        Близнецы-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ БЛИЗНЕЦОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/twins/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/twins/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Близнецы.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Близнецы.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "cancer" %}
+<!--        Рак-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ РАКОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/cancer/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/cancer/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Рак.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Рак.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "lion" %}
+<!--        Лев-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ ЛЬВОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/lion/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/lion/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Лев.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Лев.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "virgin" %}
+<!--        Дева-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ ДЕВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/virgin/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/virgin/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Дева.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Дева.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "scales" %}
+<!--        Весы-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ ВЕСОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/scales/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/scales/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Весы.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Весы.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "scorpio" %}
+<!--        Скорпион-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ СКОРПИОНОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/scorpio/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/scorpio/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Скорпион.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Скорпион.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "sagittarius" %}
+<!--        Стрелец-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ СТРЕЛЬЦОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/sagittarius/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/sagittarius/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Стрелец.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Стрелец.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "capricorn" %}
+<!--        Козерог-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ КОЗЕРОГОВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/capricorn/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/capricorn/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Козерог.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Козерог.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "aquarius" %}
+<!--        Водолей-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ ВОДОЛЕЕВ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/aquarius/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/aquarius/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Водолей.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Водолей.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% elif type == "fish" %}
+<!--        Рыбы-->
+        <h6 class="display-6"> ГОРОСКОП ДЛЯ РЫБ </h6>
+        <dfn> {{ date }} </dfn><br>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/fish/today">Сегодня</a>
+            <a role="button" class="btn btn-outline-success btn-sm shadow mb-3 rounded" href="/horoscope/fish/tomorrow">Завтра</a>
+            {% if not day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Рыбы.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% elif day %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col"><img src="{{url_for('static', filename='img/zodiacs/Рыбы.jpg')}}" alt="Здесь должна была быть картинка"></div>
+                        <div class="col text-center"><h6 class="display-6">{{ forecast }}</h6></div>
+                    </div>
+                </div>
+            {% endif %}
+            <h6> &nbsp; </h6>
+            <a role="button" class="btn btn-outline-primary btn-lg shadow mb-3 rounded" href="/horoscope/choice">Посмотреть другой гороскоп</a>
+        {% endif %}
+    </p>
+</body>
+{% endblock %}

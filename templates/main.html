@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <img src="{{url_for('static', filename='img/illustrations/main_window.jpg')}}" alt="Здесь должна была быть картинка">
+    <p align="left">
+        <h6 class="display-6">Введение</h6>
+        <a>{{ about }}</a>
+    </p>
+    <p align="left">
+        <h6 class="display-6">Термины</h6>
+        <a>Конечно же, есть ряд необходимых терминов, которые тебе стоит изучить:</a>
+        <ul>
+            {% for term in terms %}
+                <li>{{ term }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+</body>
+{% endblock %}
